@@ -1,0 +1,131 @@
+@import url("reset.css"); 
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#body{
+  margin-bottom:50px;
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #main{
+    position: relative;
+    height: inherit;
+    width:760px;
+   
+  }
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #orderh1{
+    font-size: 35px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 320px;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  .orderh2 {
+    font-size: 25px;
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .qybutton {
+   padding:5px 10px;
+  }
+
+.content {
+  font-size: 15px;
+}
+
+.order_table{
+  margin-bottom: 50px;
+  font-size: 18px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.order_table th{
+  border-top: gray solid 1px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+.order_table td {
+  border-top: gray solid 1px;
+    border-bottom: gray solid 1px;
+    height: 45px;
+}
+
+
+#radio {
+ margin:20px 20px 20px 10px;
+ font-weight: bold;
+ color: rgb(73, 73, 73);
+ font-size: 18px;
+}
+
+
+#radio label { 
+   margin-right: 40px;
+}
+
+#radio2 label { 
+  margin-right: 30px;
+}
+
+#adDiv {
+  width: 80px;
+  display: inline-block;
+}
+
+.dvy{
+  margin-bottom: 10px;
+}
+
+#zip {
+  margin-top: 10px;
+  width: 150px; 
+  height: 28px;
+  border:0px; 
+  border-radius:5px; 
+  background-color: rgb(77, 77, 77); 
+  color: white;
+}
+
+
+#button_box input{
+    background-color:rgb(241, 100, 100);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin:auto;
+    display: block;
+}
+

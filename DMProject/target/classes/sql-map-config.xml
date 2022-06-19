@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.spring.dm.dto.BbaDto" alias="bbaDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.BbDto" alias="bbDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.BbiDto" alias="bbiDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.CartDto" alias="cartDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.DeliveryDto" alias="deliveryDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.MemberDto" alias="memberDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.OrderDetailDto" alias="orderDetailDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.OrderDto" alias="orderDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.ProductDto" alias="productDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.ProductImageDto" alias="productImageDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.SchoolZoneDto" alias="schoolZoneDto"></typeAlias>
+		<typeAlias type="com.spring.dm.dto.CartListDto" alias="cartListDto"></typeAlias>
+	</typeAliases>
+</configuration>

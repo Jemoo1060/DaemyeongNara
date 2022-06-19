@@ -1,0 +1,141 @@
+#Inquirymainfont{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+
+
+#deliveryimgTable{
+    margin: auto;
+    width: 1000px;
+    border: 1px solid black;
+    margin-bottom: 80px;
+    font-size: 18px;
+}
+
+#deliveryimgTable tr th{
+    background-color: rgb(46, 204, 113);
+    border:2px solid rgb(190, 190, 190);
+    color: white;
+    height: 55px;
+    vertical-align: middle;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#deliveryimgTable tr td{
+    border:2px solid rgb(190, 190, 190);
+    padding-left: 10px;
+}
+
+#deliveryimgTable tr td img{
+    margin-right: 40px;
+}
+
+#deliveryDetail{
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+#deliveryDetail > div{
+    display: flex;
+    flex : 0 0 50%;
+}
+
+
+#deliveryText1{
+    font-weight: bolder;
+    flex : 0 0 50%;
+}
+
+#deliveryText1 h2{
+    margin-left: 170px;
+}
+
+#deliveryText2{
+
+    font-weight: bolder;
+    border-right: 4px solid rgb(190, 190, 190);
+    flex : 0 0 50%;
+}
+
+#deliveryText2 h2{
+    margin-left: 90px;
+}
+
+#deliveryText3{
+    font-weight: bolder;
+    flex : 0 0 40%;
+}
+
+
+#deliveryText3 h2{
+    margin-left: 50px;
+}
+
+#deliveryText4{
+    font-weight: bolder;
+    flex : 0 0 60%;
+}
+
+
+#deliveryText1 h2{
+    height: 70px;
+}
+
+#deliveryText2 h2{
+    height: 70px;
+}
+
+#deliveryText3 h2{
+    height: 70px;
+}
+
+#deliveryText4 h2{
+    height: 70px;
+}
+
+
+#InquirydeliveryButton{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#InquirydeliveryButton #homeButton{
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#InquirydeliveryButton #myPageButton {
+    background-color: white;
+    color: rgb(46, 204, 113);
+    border: 1px solid rgb(46, 204, 113);
+    margin-bottom: 90px;
+    width: 130px;
+    height: 60px;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+
+
+
+

@@ -1,0 +1,117 @@
+
+#cstUpdatemainfont{
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#cstInfoUpTable{
+    height: 450px;
+    border-top: 3px solid rgb(190, 190, 190);
+    
+}
+
+#cstInfoUpTable tr th{
+    width: 200px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    border-right: 1px solid rgb(190, 190, 190);
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-size: 20px;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+#cstInfoUpTable tr td{
+    font-size: 20px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    width:650px;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+#cstInfoUpTable tr td input[type="text"]{
+    width : 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#phoneUpdate{
+    height: 30px;
+    font-size: 15px;
+    width : 150px;
+    background-color: rgb(224, 224, 224);
+    color: black;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.passwordInput{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.passwordInput2{
+    display: flex;
+}
+
+
+.passwordtext{
+    flex: 0 0 30%;
+    padding-top: 8px;
+}
+
+.passwordsub{
+    flex: 0 0 70%;
+}
+
+.passwordInput input[type="password"]{
+    width : 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.passwordInput2 input[type="password"]{
+    width : 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#schoolchk{
+    width : 20px;
+    height: 15px;
+    margin-right: 50px;
+}
+
+#schoolsel{
+    width : 50px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#InfoUpdatebuttoninput{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#InfoUpdatebuttoninput input[type="submit"],#InfoUpdatebuttoninput input[type="button"]{
+    background-color: rgb(94, 94, 94);
+    color:white;
+    font-size: 25px;
+    border-radius: 5px;
+    border : 0px;
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#InfoUpdatebuttoninput input[type="submit"]{
+    margin-right: 30px;
+}
+
+
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IOrderDao">
+
+	<resultMap type="orderDto" id="rsMap">
+		<id property="orderCode" column="ORDER_CODE" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="dlvyCode" column="DLVY_CODE" />
+		<result property="orderDate" column="ORDER_DATE" />
+		<result property="setleMth" column="SETLE_MTH" />
+		<result property="recptMth" column="RECPT_MTH" />
+		<result property="progrsSttus" column="PROGRS_STTUS" />
+		<result property="hdrlName" column="HDRL_NAME" />
+		<result property="waybilNum" column="WAYBIL_NUM" />
+		<result property="demand" column="DEMAND" />
+		<result property="totalPc" column="TOTAL_PC" />
+	</resultMap>
+
+	<select id="orderSltone" parameterType="String" resultMap="rsMap">
+		SELECT * 
+		FROM DORDER
+		WHERE ORDER_CODE = #{orderCode}
+	</select>
+
+	<insert id="orderInsert">
+		INSERT INTO DORDER VALUES
+		(#{orderCode}, #{mbrCode}, #{dlvyCode},
+		#{orderDate}, #{setleMth}, #{recptMth}, #{progrsSttus},
+		#{hdrlName}, #{waybilNum}, #{demand}, #{totalPc})	
+	</insert>
+
+	<update id="orderUpdate" >
+		UPDATE DORDER SET
+		ORDER_DATE = #{orderDate},
+		SETLE_MTH = #{setleMth},
+		RECPT_MTH = #{recptMth},
+		PROGRS_STTUS = #{progrsSttus},
+		HDRL_NAME = #{hdrlName},
+		WAYBIL_NUM = #{waybilNum},
+		DEMAND = #{demand},
+		TOTAL_PC = #{totalPc}
+		WHERE ORDER_CODE = #{orderCode}
+	</update>
+</mapper>

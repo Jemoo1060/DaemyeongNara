@@ -1,0 +1,79 @@
+#admin_mbr_manage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+#admin_mbr_manage h1 {
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+
+#ap_manage_category {
+    display: flex;
+    justify-content: flex-end;
+    width: 910px;
+}
+
+#ap_manage_category select {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#admin_mbr_manage table {
+    border: 1px solid black;
+}
+
+#admin_mbr_manage th {
+    border: 1px solid black;
+    font-size: 22px;
+    vertical-align: middle;
+    background-color: rgb(46,204,113);
+    color: white;
+}
+
+#admin_mbr_manage td {
+    border: 1px solid black;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.amm_num {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+}
+
+.amm_name {
+    width: 200px;
+    text-align: center;
+}
+
+.amm_grade {
+    width: 200px;
+    text-align: center;
+}
+
+.amm_total_price {
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.amm_anything {
+    width: 150px;
+}
+
+.amm_update {
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid rgb(46,204,113);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

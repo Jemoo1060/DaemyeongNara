@@ -1,0 +1,67 @@
+#school_ready {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#school_ready h1 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#school_ready h3 {
+    font-size: 25px;
+    width: 120px;
+}
+
+.grade_class, .school_ready_text {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.grade_class h4 {
+    font-size: 25px;
+    border-left: 1px solid black;
+    padding-left: 20px;
+}
+
+.school_ready_text input {
+    font-size: 25px;
+    padding-left: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.school_ready_text div {
+    border-left: 1px solid black;
+    padding-left: 20px;
+}
+
+.school_ready_text {
+    padding-top: 15px;
+}
+
+#school_ready_input_box {
+	display: flex;
+	justify-content: center;
+}
+
+.schoolReadyBtn {
+	width: 120px;
+	height: 50px;
+	font-size: 18px;
+	border-radius: 18px;
+	margin: 20px;
+}
+
+.schoolReadyBtn_submit {
+	color: white;
+	background-color: blue;
+}
+
+.schoolReadyBtn_delete {
+	color: white;
+	background-color: red;
+}

@@ -1,0 +1,75 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+  margin:0 auto;
+}
+
+#body{
+	margin-bottom: 50px;
+}
+
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+    
+  }
+
+  #main{
+    height: inherit;
+    width:760px;
+    
+  }
+  
+
+  #main img{ 
+    width: 200px;
+  }
+
+  #table1 table td{
+    border: solid rgba(128, 128, 128, 0.438) 0.5px;
+    font-size: 15px;
+    text-align: center;
+    padding:5px; 
+    border-radius: 7px; 
+  }
+
+  #button{
+    position: absolute;
+    left:40%;
+  }
+
+  #button input {
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 5px 50px;
+    background-color: rgb(79,129,189);
+    color: white;
+    border-radius: 5px;
+  }
+
+  #comment {
+    padding: 10px;
+  }
+
+  #answer_table {
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+  }
+
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+
+

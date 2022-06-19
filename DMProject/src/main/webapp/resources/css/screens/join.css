@@ -1,0 +1,154 @@
+#join_section {
+    margin-top: 80px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#join_logo_img {
+    width: 350px;
+    height: 150px;
+}
+
+#join_top {
+    display: flex;
+    align-items: flex-end;
+}
+
+#join_top h1 {
+    font-size: 40px;
+}
+
+#join_form {
+    font-size: 25px;
+}
+
+#join_form p {
+    color: red;
+}
+
+.join_input {
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.join_line {
+    display: flex;
+}
+
+.join_input_id {
+    width: 500px;
+}
+
+.id_check {
+    height: 40px;
+    width: 160px;
+}
+
+#join_form button {
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.join_input_pw {
+    width: 670px;
+}
+
+.join_name {
+    width: 50%;
+}
+
+.join_input_phone {
+    width: 150px;
+}
+
+.join_phone_check {
+    width: 150px;
+    height: 40px;
+}
+
+.join_ss {
+    width: 50%;
+}
+
+.join_input_school input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+.join_input_school {
+    display: flex;
+    align-items: center;
+}
+
+.join_line select {
+    margin-top: 15px;
+    height: 35px;
+}
+
+.join_input_school {
+    margin-bottom: 15px;
+}
+
+.join_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.join_btn input {
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    font-size: 25px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.join_gc {
+    display: flex;
+    align-items: center;
+}
+
+.join_gc select {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.join_email input {
+    width: 670px;
+}
+
+.yackgwan {
+    width: 690px;
+    height: 300px;
+    color: black;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join_check {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.join_check h3 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.join_check input {
+    width: 20px;
+    height: 20px;
+}

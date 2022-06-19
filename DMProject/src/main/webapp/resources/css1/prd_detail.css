@@ -1,0 +1,88 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#bodytitle{
+  height: 70px;
+  padding: 10px;
+}
+#sub-bodytitle{
+  background-color: azure;
+  margin:0px 50px;
+  height: 35px;
+  
+}
+
+#sub-bodytitle ul{
+  margin:10px;
+  justify-items: center;
+}
+#sub-bodytitle li{
+  display: inline;
+  margin-left: 70px;
+  font-size: 20px;
+}
+
+#body{
+	margin-bottom: 50px;
+
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #main{
+    position: relative;
+    height: inherit;
+    width:760px;
+
+  }
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #ssj_box{
+      margin:0 auto;	
+      text-align: center;
+  }
+
+  #ssj_name{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .ssj_button1, .ssj_button2, .ssj_button3, .ssj_button4{
+    background-color: rgb(90, 90, 90);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding:10px 10px;
+    width: 180px;
+    font-size: 20px;
+    margin: 20px 20px;
+    cursor: pointer;
+  }
+
+  .ssj_img{
+    width: auto;
+    height: auto;
+  }
+  

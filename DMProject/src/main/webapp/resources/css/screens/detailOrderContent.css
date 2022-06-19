@@ -1,0 +1,72 @@
+#orderContentmainfont{
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.orderContentTable{
+    width: 1000px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+#orderContentdelivery{
+    color: red;
+    width: 100px;
+}
+
+.orderContentTable tr th{
+    background-color: rgb(46, 204, 113);
+    border:1px solid black;
+    color: white;
+    height: 45px;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+.orderContentTable tr td{
+    border:1px solid black;
+    height: 45px;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+#orderContentbuttonBox{
+    display: flex;
+    justify-content: center;
+}
+
+#orderContentbuttonBox #orderButton{
+    background-color: white;
+    color: rgb(46, 204, 113);
+    border: 1px solid rgb(46, 204, 113);
+    width: 130px;
+    height: 60px;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+
+#orderContentbuttonBox #homeButton {
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+
+
+
+

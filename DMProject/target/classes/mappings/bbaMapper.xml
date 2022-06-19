@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IBbaDao">
+
+	<resultMap type="bbaDto" id="rsMap">
+		<result property="answerNum" column="ANSWER_NUM" />
+		<result property="bbiCode" column="BBI_CODE" />
+		<result property="bbNum" column="BB_NUM" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="answerDate" column="ANSWER_DATE" />
+		<result property="answerCn" column="ANSWER_CN" />
+	</resultMap>
+	
+	<select id="answerSltone" parameterType="String" resultMap="rsMap">
+		SELECT *
+		FROM BULLETIN_BOARD_ANSWER
+		WHERE ANSWER_NUM = #{answerNum}
+	</select>
+
+	<insert id="answerInsert">
+		INSERT INTO BULLETIN_BOARD_ANSWER
+		VALUES(#{answerNum}, #{bbiCode}, #{bbNum},
+		#{mbrCode}, #{answerDate}, #{answerCn})
+	</insert>
+	
+	<update id="answerUpdate" >	 
+		UPDATE BULLETIN_BOARD_ANSWER SET
+		ANSWER_CN = #{answerCn}
+		WHERE ANSWER_NUM = #{answerNum}
+	</update>
+	
+	<delete id="answerDelete">
+		DELETE FROM BULLETIN_BOARD_ANSWER
+		WHERE ANSWER_NUM = #{answerNum}
+	</delete>
+
+</mapper>
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IDeliveryDao">
+
+	<resultMap type="deliveryDto" id="rsMap">
+		<result property="dlvyCode" column="DLVY_CODE" />
+		<result property="recptName" column="RECPT_NAME" />
+		<result property="dlvyCttpc" column="DLVY_CTTPC" />
+		<result property="dlvyZip" column="DLVY_ZIP" />
+		<result property="dlvyDetailAdres" column="DLVY_DETAIL_ADRES" />
+	</resultMap>
+	
+	<select id="deliverySltone" parameterType="String" resultMap="rsMap">
+		SELECT *
+		FROM DELIVERY
+		WHERE DLVY_CODE = #{dlvyCode}
+	</select>
+
+
+	<insert id="deliveryInsert" parameterType="deliveryDto">
+		INSERT INTO DELIVERY 
+		VALUES (#{dlvyCode}, #{recptName}, #{dlvyCttpc}, #{dlvyZip}, #{dlvyDetailAdres})
+	</insert>
+	
+</mapper>
+
+

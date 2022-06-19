@@ -1,0 +1,92 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#body{
+  height : 1200px; 
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 80px;
+
+  }
+
+  #main{
+    margin-top: 50px;
+    position: relative;
+    height: inherit;
+    width:760px;
+    background-color: rgb(250, 240, 221);
+  }
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+  
+  #school_main img{
+    margin-top: 10px;
+    width:760px;
+    margin-bottom: 20px;
+  }
+
+  .class {
+    width: 739px;
+    height: 50px;
+    display: flex;
+    font-size: 25px;
+    text-align: left;
+    padding:10px 0px 10px 20px;
+    margin-bottom: 30px;
+  }
+
+  .class input {
+    font-size: 25px;
+    width:105px;
+    margin-right: 20px;
+  }
+
+  #grade1,#grade2,#grade3,#grade4,#grade5,#grade6{
+    box-shadow: 0px 7px 7px 4px gray;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .grade {
+    box-shadow: 0px 7px 7px 4px gray;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #main_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img{
+    position:absolute;
+    bottom:10px;
+    right: 10px;
+  }
+
+  #msg {
+    cursor: pointer;
+    position: absolute;
+    left: -100px;
+    top: -150px;
+  }
+

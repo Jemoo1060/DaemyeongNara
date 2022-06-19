@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.ISchoolZoneTaskDao">
+
+	<resultMap type="schoolZoneDto" id="rsMap">
+		<result property="schulCode" column="SCHUL_CODE" />
+		<result property="schulMsg" column="SCHUL_MSG" />
+	</resultMap>
+	
+	<select id="noticeSltmul" resultMap="rsMap">
+		SELECT *
+		FROM SCHOOL_ZONE
+	</select>
+	
+</mapper>

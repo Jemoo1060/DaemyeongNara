@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IMemberTaskDao">
+
+	<resultMap type="memberDto" id="rsMap">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="mbrId" column="MBR_ID" />
+		<result property="mbrPwd" column="MBR_PWD" />
+		<result property="mbrName" column="MBR_NAME" />
+		<result property="mbrBrthdy" column="MBR_BRTHDY" />
+		<result property="mbrSex" column="MBR_SEX" />
+		<result property="mbrEmail" column="MBR_EMAIL" />
+		<result property="mbrTelNo" column="MBR_TELNO" />
+		<result property="mbrGrade" column="MBR_GRADE" />
+		<result property="sbscrbDate" column="SBSCRB_DATE" />
+		<result property="schulGradeClass" column="SCHUL_GRADE_CLASS" />	
+	</resultMap>
+	
+	<select id="idInfoCheck" parameterType="String" resultMap="rsMap">
+		SELECT *
+		FROM DMEMBER
+		WHERE MBR_ID = #{mbrId}
+	</select>
+		
+	<select id="allMbrSltmul" parameterType="HashMap" resultMap="rsMap">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM DMEMBER
+     		 		ORDER BY TO_NUMBER(MBR_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="allMbrPaging" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM DMEMBER
+	</select>
+	
+	<select id="mbrGradeSltmul" parameterType="HashMap" resultMap="rsMap">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM DMEMBER
+     		 		WHERE MBR_GRADE = #{mbrGrade}
+     		 		ORDER BY TO_NUMBER(MBR_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+
+	<select id="mbrGradePaging" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM DMEMBER
+		WHERE MBR_GRADE = #{mbrGrade}
+	</select>
+</mapper>
+
+

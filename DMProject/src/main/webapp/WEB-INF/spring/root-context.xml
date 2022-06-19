@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<bean id = "dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource"
+	destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" 			 value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		<property name="username" 		 value="dev"></property>
+		<property name="password" 		 value="123456"></property>		
+	</bean>
+	
+	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref = "dataSourceSpied"/>
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE" />
+				<property name="sqlPrefix" 	 value="SQL         :  "/>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- 트랜잭션 매니저 bean 등록 -->
+	<bean id="transactionManager"
+	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!--  Annotation 기반의 트랜잭션 사용 -->
+	<context:annotation-config/>
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!--  Annotation 기반의 Component Scan -->
+	<context:component-scan base-package="com.spring.dm"/>
+	
+	<!-- sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- MyBatis 설정파일의 위치를 지정합니다 -->
+		<property name="configLocation" value="classpath:/sql-map-config.xml"/>
+		<!-- SQL 파일의 위치를 지정합니다 -->
+		<property name="mapperLocations" value="classpath:/mappings/*.xml"/>
+		<!-- 트랜잭션 관리를 위한 것 -->
+		<property name="transactionFactory">
+			<bean class="org.mybatis.spring.transaction.SpringManagedTransactionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+	destroy-method="clearCache">
+		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+	
+	<!-- DAO interface 위치 등록 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.spring.dm.dao" />
+	</bean>
+</beans>

@@ -1,0 +1,42 @@
+#find_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#find_info h1 {
+    font-size: 45px;
+    padding-bottom: 50px;
+}
+
+.find_info_type {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    font-size: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid black;
+}
+
+.find_info_ag {
+    margin-top: 50px;
+    font-size: 25px;
+    background-color: lightgray;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#find_info input {
+    border-radius: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(45, 45, 45);
+    width: 800px;
+    height: 65px;
+    margin-bottom: 100px;
+}

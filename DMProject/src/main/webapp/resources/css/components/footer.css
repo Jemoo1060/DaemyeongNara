@@ -1,0 +1,39 @@
+#footer_box{
+    text-align: center;
+}
+#footer{
+    display: inline-block;
+    width: 800px;
+    position:relative;
+    height: 300px;
+}
+
+#footer-title{
+    position: absolute;
+    top:10%;
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+#footer h2{
+    margin-top: 10px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.footer-content{
+    top: 35%;
+    display: flex;
+    position: absolute;
+    text-align: left;
+
+}
+    
+.footer_new{
+     border-top:#ddd solid 2px;
+     border-bottom:#ddd solid 2px; ;
+     background-color: white;
+}
+    

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.ICartDao">
+
+	<resultMap type="cartDto" id="rsMap">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="qy" column="QY" />
+	</resultMap>
+	
+	<select id="cartSltone" parameterType="cartDto" resultMap="rsMap">
+		SELECT *
+		FROM CART
+		WHERE MBR_CODE = #{mbrCode}
+		AND PRD_CODE = #{prdCode}
+	</select>
+
+	<insert id="cartInsert">
+		INSERT INTO CART VALUES
+		(#{mbrCode}, #{prdCode}, #{qy})
+	</insert>
+	
+	<update id="cartUpdate" >	 
+		UPDATE CART SET
+		QY = #{qy}
+		WHERE MBR_CODE = #{mbrCode}
+		AND PRD_CODE = #{prdCode}
+	</update>
+
+	<delete id="cartDelete">
+		DELETE FROM CART
+		WHERE MBR_CODE = #{mbrCode}
+		AND PRD_CODE = #{prdCode}
+	</delete>
+
+</mapper>
+
+

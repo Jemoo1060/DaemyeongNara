@@ -1,0 +1,61 @@
+#mbr_update {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mbr_update h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+#mbr_update table, #mbr_update th, #mbr_update td {
+    border: 2px solid black;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+#mbr_update th {
+    height: 50px;
+    width: 150px;
+}
+
+#mbr_update td {
+    padding-left: 15px;
+    width: 450px;
+}
+
+.mbr_update_grade {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.mbr_update_grade select {
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+.mbr_update_btn {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.mbr_update_btn input {
+    font-size: 30px;
+    border-radius: 20px;
+    margin: 30px;
+    width: 150px;
+    color: white;
+}
+
+.mbr_update_btn_submit {
+    background-color: rgb(243,109,109);
+}
+
+.mbr_update_btn_cancel {
+    background-color: rgb(45,45,45);
+}

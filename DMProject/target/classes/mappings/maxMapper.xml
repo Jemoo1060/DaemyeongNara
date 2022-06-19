@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IMaxDao">
+	
+	<select id="maxMbrCode" resultType="String">
+		SELECT MAX(TO_NUMBER(MBR_CODE))
+		FROM DMEMBER
+	</select>
+	
+	<select id="maxPrdCode" resultType="String">
+		SELECT MAX(TO_NUMBER(PRD_CODE))
+		FROM PRODUCT
+	</select>
+	
+	<select id="maxBbNum" resultType="String" >
+		SELECT MAX(TO_NUMBER(BB_NUM))
+		FROM BULLETIN_BOARD
+		WHERE BBI_CODE = #{bbiCode}
+	</select>
+	
+	<select id="maxBbaNum" resultType="String" >
+		SELECT MAX(TO_NUMBER(ANSWER_NUM))
+		FROM BULLETIN_BOARD_ANSWER
+	</select>
+	
+	<select id="maxOrderCode" resultType="String">
+		SELECT MAX(TO_NUMBER(ORDER_CODE))
+		FROM DORDER
+	</select>
+	
+	<select id="maxDlvyCode" resultType="String">
+		SELECT MAX(TO_NUMBER(DLVY_CODE))
+		FROM DELIVERY
+	</select>
+</mapper>
+
+

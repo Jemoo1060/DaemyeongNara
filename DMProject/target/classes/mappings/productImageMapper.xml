@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IProductImageDao">
+
+	<resultMap type="productImageDto" id="rsMap">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="prdImageCode" column="PRD_IMAGE_CODE" />
+		<result property="prdImageUrl" column="PRD_IMAGE_URL" />
+	</resultMap>
+	
+	<select id="prdImgSltone" parameterType="productImageDto" resultMap="rsMap">
+		SELECT *
+		FROM PRODUCT_IMAGE
+		WHERE PRD_CODE = #{prdCode}
+		AND PRD_IMAGE_CODE = #{prdImageCode}
+	</select>
+	
+	<insert id="prdImgInsert">
+		INSERT INTO PRODUCT_IMAGE VALUES(#{prdCode}, #{prdImageCode}, #{prdImageUrl})
+	</insert>
+	
+	<delete id="prdImgDelete">
+		DELETE FROM PRODUCT_IMAGE
+		WHERE PRD_CODE = #{prdCode} AND PRD_IMAGE_CODE = #{prdImageCode}
+	</delete>
+	
+</mapper>

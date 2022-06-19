@@ -1,0 +1,66 @@
+#cstCheckmainfont{
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#cstCheckinfoCheck{
+
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#cstTable{
+    height: 150px;
+    border-top: 3px solid rgb(190, 190, 190);
+    
+}
+
+#cstTable tr th{
+    width: 200px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    border-right: 1px solid rgb(190, 190, 190);
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-size: 20px;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+#cstTable tr td{
+    font-size: 20px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    width:650px;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+#cstTable tr td input[type="password"]{
+    width : 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#cstCheckbuttoninput{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#cstCheckbuttoninput input[type="submit"], #cstCheckbuttoninput input[type="button"]{
+    background-color: rgb(94, 94, 94);
+    color:white;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+
+
+
+

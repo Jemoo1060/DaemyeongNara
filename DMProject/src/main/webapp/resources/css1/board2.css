@@ -1,0 +1,67 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+  background: #11000020 ;
+  margin:0 auto;
+}
+
+
+#body{
+  height : 800px; 
+
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+    background:white;
+  }
+
+  #main{
+    height: inherit;
+    width:760px;
+    background: white
+  }
+  
+
+  #main img{ 
+    width: 200px;
+  }
+
+  #main table td{
+    border: solid rgba(128, 128, 128, 0.438) 0.5px;
+    font-size: 15px;
+    text-align: center;
+    padding:5px; 
+    border-radius: 7px; 
+  }
+
+  #button{
+    position: absolute;
+    left:45%;
+  }
+
+  #button input {
+    font-size: 15px;
+    margin-left: 5px;
+    padding: 5px 30px;
+    background-color: rgb(79,129,189);
+    color: white;
+    border-radius: 5px;
+  }
+
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+    background:white;
+  }
+

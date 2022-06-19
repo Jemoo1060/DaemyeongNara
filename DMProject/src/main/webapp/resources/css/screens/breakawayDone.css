@@ -1,0 +1,39 @@
+#checkImg{
+    width: 120px;
+    margin-left: 75px;
+    margin-bottom: 40px;
+}
+
+#breakawaymainfont{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 70px;
+}
+
+
+#breakawayhomeButton{
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: 75px;
+}
+
+#mainContent {
+    margin-top: 30px;
+    margin-bottom: 200px;
+}
+
+#mainContent1 {
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+
+
+
+

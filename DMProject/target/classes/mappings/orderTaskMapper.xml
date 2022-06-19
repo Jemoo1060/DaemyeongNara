@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IOrderTaskDao">
+
+	<resultMap type="orderDto" id="rsMap1">
+		<id property="orderCode" column="ORDER_CODE" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="dlvyCode" column="DLVY_CODE" />
+		<result property="orderDate" column="ORDER_DATE" />
+		<result property="setleMth" column="SETLE_MTH" />
+		<result property="recptMth" column="RECPT_MTH" />
+		<result property="progrsSttus" column="PROGRS_STTUS" />
+		<result property="hdrlName" column="HDRL_NAME" />
+		<result property="waybilNum" column="WAYBIL_NUM" />
+		<result property="demand" column="DEMAND" />
+		<result property="totalPc" column="TOTAL_PC" />
+	</resultMap>
+
+	<resultMap type="productDto" id="rsMap2">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+	</resultMap>
+	
+	<resultMap type="deliveryDto" id="rsMap3">
+		<result property="dlvyCode" column="DLVY_CODE" />
+		<result property="recptName" column="RECPT_NAME" />
+		<result property="dlvyCttpc" column="DLVY_CTTPC" />
+		<result property="dlvyZip" column="DLVY_ZIP" />
+		<result property="dlvyDetailAdres" column="DLVY_DETAIL_ADRES" />	
+	</resultMap>
+	
+	<resultMap type="orderDetailDto" id="rsMap4">
+		<id property="orderCode" column="ORDER_CODE" />
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="detailOrderQy" column="DETAIL_ORDER_QY" />	
+	</resultMap>
+	
+	<resultMap type="productImageDto" id="rsMap6">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="prdImageCode" column="PRD_IMAGE_CODE" />
+		<result property="prdImageUrl" column="PRD_IMAGE_URL" />
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap">
+		<collection property="delivery" resultMap="rsMap3"></collection>
+		<collection property="order" resultMap="rsMap1"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap5">
+		<collection property="orderDetail" resultMap="rsMap4"></collection>
+		<collection property="product" resultMap="rsMap2"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap7">
+		<collection property="orderDetail" resultMap="rsMap4"></collection>
+		<collection property="product" resultMap="rsMap2"></collection>
+		<collection property="productImage" resultMap="rsMap6"></collection>
+	</resultMap>
+
+	<select id="dateOrderSltmul" parameterType="HashMap" resultMap="rsMap1" >
+		SELECT *
+		FROM DORDER
+		WHERE MBR_CODE = #{mbrCode} 
+		AND ORDER_DATE BETWEEN #{startDate} AND #{endDate}
+	</select>
+	
+	<select id="orderInfoSltmul" parameterType="String" resultType="HashMap" resultMap="rsMap7" >
+		SELECT *
+		FROM ORDER_DETAIL OD JOIN PRODUCT P 
+		ON (OD.PRD_CODE = P.PRD_CODE) 
+		JOIN PRODUCT_IMAGE PI
+		ON (OD.PRD_CODE = PI.PRD_CODE)
+		WHERE ORDER_CODE = #{orderCode}
+		AND PI.PRD_IMAGE_CODE = '01'
+	</select>
+
+	<select id="adOrderDateSltmul" parameterType="HashMap" resultMap="rsMap1">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM   DORDER
+     		 		WHERE ORDER_DATE BETWEEN #{startDate} AND #{endDate}
+     		 		ORDER BY TO_NUMBER(ORDER_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="orderDateListPaging" parameterType="HashMap" resultType="int">
+		SELECT COUNT(*)
+		FROM DORDER
+		WHERE ORDER_DATE BETWEEN #{startDate} AND #{endDate}
+	</select>
+	
+	<select id="orderPrdSltmul" parameterType="String" resultType="HashMap" resultMap="rsMap5">
+		SELECT *
+		FROM ORDER_DETAIL OD JOIN PRODUCT P ON
+		P.PRD_CODE =  OD.PRD_CODE
+		WHERE ORDER_CODE = #{orderCode}
+	</select>
+	
+	<select id="deliveryInfo" parameterType="String" resultType="HashMap" resultMap="rsMap">
+		SELECT *
+		FROM DORDER O JOIN DELIVERY D ON
+		O.DLVY_CODE = D.DLVY_CODE
+		WHERE ORDER_CODE = #{orderCode} 
+	</select>
+
+	<select id="progrsSttusList" parameterType="HashMap" resultMap="rsMap1">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM   DORDER
+     		 		WHERE PROGRS_STTUS = #{progrsSttus}
+     		 		ORDER BY TO_NUMBER(ORDER_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+		<select id="progrsSttusListPaging" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM DORDER
+		WHERE PROGRS_STTUS = #{progrsSttus}
+	</select>
+</mapper>

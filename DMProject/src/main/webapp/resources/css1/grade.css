@@ -1,0 +1,184 @@
+@import url("reset.css"); 
+
+.info_container1{
+    background-color:rgb(250, 231, 236);
+    width:500px;
+    padding: 10px;
+    border-radius: 10px;
+    border:2px solid pink;
+    position:absolute;
+    bottom:50%;
+}
+
+.info_container1 table{
+    width: 500px;
+    height: 350px;
+}
+
+.bin{
+    width: 5px;
+    border-color: transparent;
+}
+
+.bin2{
+    height: 12px;
+    width: 5px;
+    border-color: transparent;
+}
+
+.class1 {
+    width: 200px;
+    font-size: 12px;
+    text-align: center;
+    height: 5px; 
+    font-weight: bold;
+    font-size: 18px;
+    background-color: pink;
+    border: solid rgba(128, 128, 128, 0.438) 1px;
+   border-radius: 10px;
+}
+
+.content {
+    width: 200px;
+    height: 100px;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 20px; 
+    border-radius: 10px;
+    border: solid rgba(128, 128, 128, 0.438) 1px;
+}
+
+.info_container2 {
+  background-color:rgb(225, 242, 250);
+  width:500px;
+  padding: 10px;
+  border-radius: 10px;
+  border:2px solid rgb(188, 230, 248);
+  position:absolute;
+  bottom:550px;
+}
+
+.info_container2 table{
+  width: 500px;
+  height: 350px;
+}
+
+.class2 {
+  width: 200px;
+  font-size: 12px;
+  text-align: center;
+  height: 5px; 
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgb(177, 227, 248);
+  border: solid rgba(128, 128, 128, 0.438) 1px;
+ border-radius: 10px;
+}
+
+.info_container3 {
+  background-color:rgb(245, 245, 200);
+  width:500px;
+  padding: 10px;
+  border-radius: 10px;
+  border:2px solid rgb(248, 248, 136);
+  position:absolute;
+  bottom:500px;
+}
+
+.info_container3 table{
+  width: 500px;
+  height: 350px;
+}
+
+.class3 {
+  width: 200px;
+  font-size: 12px;
+  text-align: center;
+  height: 5px; 
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgb(248, 248, 136);
+  border: solid rgba(128, 128, 128, 0.438) 1px;
+ border-radius: 10px;
+}
+
+.info_container4 {
+  background-color:rgb(228, 248, 228);
+  width:500px;
+  padding: 10px;
+  border-radius: 10px;
+  border:2px solid rgb(202, 250, 202);
+  position:absolute;
+  bottom:400px;
+}
+
+.info_container4 table{
+  width: 500px;
+  height: 350px;
+}
+
+.class4 {
+  width: 200px;
+  font-size: 12px;
+  text-align: center;
+  padding:3px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgb(202, 250, 202);
+  border: solid rgba(128, 128, 128, 0.438) 1px;
+  border-radius: 10px;
+}
+
+.info_container5 {
+  background-color:rgb(215, 252, 250);
+  width:500px;
+  padding: 10px;
+  border-radius: 10px;
+  border:2px solid rgb(174, 247, 243);
+  position:absolute;
+  bottom:400px;
+}
+
+.info_container5 table{
+  width: 500px;
+  height: 350px;
+}
+
+.class5 {
+  width: 200px;
+  font-size: 12px;
+  text-align: center;
+  height: 5px; 
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgb(174, 247, 243);
+  border: solid rgba(128, 128, 128, 0.438) 1px;
+ border-radius: 10px;
+}
+
+.info_container6 {
+  background-color:rgb(250, 235, 250);
+  width:500px;
+  padding: 10px;
+  border-radius: 10px;
+  border:2px solid rgb(255, 208, 255);
+  position:absolute;
+  bottom:350px;
+}
+
+.info_container6 table{
+  width: 500px;
+  height: 350px;
+}
+
+.class6 {
+  width: 200px;
+  font-size: 12px;
+  text-align: center;
+  height: 5px; 
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgb(255, 208, 255);
+  border: solid rgba(128, 128, 128, 0.438) 1px;
+ border-radius: 10px;
+}

@@ -1,0 +1,103 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#body{
+
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+  }
+
+  #main{
+    position: relative;
+    height: inherit;
+    width:760px;
+  }
+
+  #main img {
+    width: 200px;
+  }
+
+ 
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+    
+  }
+  
+  
+  .notice_table{
+    width: 100%;
+  }
+
+  .notice_table th,
+  .notice_table td{
+    border: 1px solid #999;
+    padding: 5px;
+  }
+
+  .notice_table td{
+    text-align: center;
+  }
+
+  .notice_table thead tr th {
+    text-align: center;
+    background-color: rgb(212, 212, 212);
+    
+  }
+
+  .notice_table .notice_title{
+    text-align: left;
+  }
+
+  .notice_table .notice_title:hover{
+    text-decoration: underline;
+  }
+
+  .table_box .paging{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .table_box .paging a{
+    display: inline-block;
+    margin-left: 3px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: rgb(231, 231, 231);
+  }
+
+  .table_box .paging a.on{
+    background-color: rgb(103, 105, 221);
+    color:white;
+  }
+
+  #write_button{
+    font-size: 15px;
+    margin-left: 5px;
+    padding: 5px 30px;
+    background-color: rgb(79,129,189);
+    color: white;
+    border-radius: 5px;
+    position:absolute;
+    left: 81%;
+  }
+
+

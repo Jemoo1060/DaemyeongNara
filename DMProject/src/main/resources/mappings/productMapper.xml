@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IProductDao">
+
+	<resultMap type="productDto" id="rsMap">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+	</resultMap>
+	
+	<select id="prdSltOne" parameterType="String" resultMap="rsMap">
+		SELECT *
+		FROM PRODUCT
+		WHERE PRD_CODE = #{prdCode}
+	</select>
+	
+	<insert id="prdInsert">
+		INSERT INTO PRODUCT VALUES(
+		#{prdCode}, #{pclCode}, #{prdName},
+		#{prdPc}, #{prdInvntry},  #{prdCn},
+		#{prdRegistDate},  #{prdRecomendAt},
+		#{prdRecomendCnt}, #{prdSe})
+	</insert>
+	
+	<update id="prdUpdate">
+		UPDATE PRODUCT SET
+		PRD_NAME = #{prdName},
+		PRD_PC = #{prdPc},
+		PRD_INVNTRY = #{prdInvntry},
+		PRD_CN = #{prdCn},
+		PRD_REGIST_DATE = #{prdRegistDate},
+		PRD_RECOMEND_AT = #{prdRecomendAt},
+		PRD_RECOMEND_CNT =#{prdRecomendCnt},
+		PRD_SE = #{prdSe}
+		WHERE PRD_CODE = #{prdCode}
+	</update>
+	
+	<delete id="prdDelete">
+		DELETE FROM PRODUCT
+		WHERE PRD_CODE = #{prdCode} 
+	</delete>
+</mapper>

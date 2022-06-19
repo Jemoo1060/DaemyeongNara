@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.ICartTaskDao">
+
+	<resultMap type="cartListDto" id="rsMap"> 
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+		<result property="prdImageCode" column="PRD_IMAGE_CODE" />
+		<result property="prdImageUrl" column="PRD_IMAGE_URL" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="qy" column="QY" />
+	</resultMap>
+	
+	<resultMap type="cartDto" id="rsMap1">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="qy" column="QY" />
+	</resultMap>
+	
+
+	<select id="mbrCartSltmul" parameterType="String" resultMap="rsMap">
+		SELECT *
+		FROM CART JOIN PRODUCT ON
+		(CART.PRD_CODE = PRODUCT.PRD_CODE)
+		JOIN PRODUCT_IMAGE ON
+		(PRODUCT.PRD_CODE = PRODUCT_IMAGE.PRD_CODE)
+		WHERE MBR_CODE = #{mbrCode} AND PRODUCT_IMAGE.PRD_IMAGE_CODE ='01'
+	</select>
+	
+	<select id="cartSltmul" parameterType="String" resultMap="rsMap1">
+		SELECT *
+		FROM CART
+		WHERE MBR_CODE=#{mbrCode}
+	</select>
+	
+	
+	<delete id="cartPrdTotalDelete">
+		DELETE 
+		FROM CART 
+		WHERE MBR_CODE=#{mbrCode}
+	</delete>
+	
+	
+</mapper>
+

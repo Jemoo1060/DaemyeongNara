@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IOrderPatternDao">
+	
+	<resultMap type="productImageDto" id="rsMap1">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="prdImageCode" column="PRD_IMAGE_CODE" />
+		<result property="prdImageUrl" column="PRD_IMAGE_URL" />
+	</resultMap>
+	
+	<resultMap type="productDto" id="rsMap2">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+	</resultMap>
+	
+	<resultMap type="cartDto" id="rsMap3">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="qy" column="Qy" />
+	</resultMap>
+	
+	<resultMap type="memberDto" id="rsMap4">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="mbrId" column="MBR_ID" />
+		<result property="mbrPwd" column="MBR_PWD" />
+		<result property="mbrName" column="MBR_NAME" />
+		<result property="mbrBrthdy" column="MBR_BRTHDY" />
+		<result property="mbrSex" column="MBR_SEX" />
+		<result property="mbrEmail" column="MBR_EMAIL" />
+		<result property="mbrTelNo" column="MBR_TELNO" />
+		<result property="mbrGrade" column="MBR_GRADE" />
+		<result property="sbscrbDate" column="SBSCRB_DATE" />
+		<result property="schulGradeClass" column="SCHUL_GRADE_CLASS" />	
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap5">
+		<collection property="productImage" resultMap="rsMap1"></collection>
+		<collection property="product" resultMap="rsMap2"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap">
+		<collection property="productImage" resultMap="rsMap1"></collection>
+		<collection property="product" resultMap="rsMap2"></collection>
+		<collection property="cart" resultMap="rsMap3"></collection>
+		<collection property="member" resultMap="rsMap4"></collection>
+	</resultMap>
+	
+	
+
+	<select id="prdDirectOrder" parameterType="String" resultType="HashMap" resultMap="rsMap5">
+		SELECT *
+		FROM PRODUCT JOIN PRODUCT_IMAGE ON
+		(PRODUCT.PRD_CODE = PRODUCT_IMAGE.PRD_CODE)
+		WHERE PRODUCT.PRD_CODE = #{prdCode} AND PRODUCT_IMAGE.PRD_IMAGE_CODE = '01'
+	</select>
+
+	<select id="cartOrderSltmul" parameterType="String" resultType="HashMap" resultMap="rsMap">	
+		SELECT *
+		FROM CART JOIN PRODUCT ON
+		(CART.PRD_CODE = PRODUCT.PRD_CODE)
+		JOIN PRODUCT_IMAGE ON
+		(PRODUCT.PRD_CODE = PRODUCT_IMAGE.PRD_CODE)
+        JOIN DMEMBER ON
+        (CART.MBR_CODE = DMEMBER.MBR_CODE)
+		WHERE CART.MBR_CODE = #{mbrCode} AND PRODUCT_IMAGE.PRD_IMAGE_CODE = '01'
+	</select>
+
+</mapper>

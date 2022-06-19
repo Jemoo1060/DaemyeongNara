@@ -1,0 +1,110 @@
+#header {
+    height: 270px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+#header_top {
+    display: flex;
+    justify-content: center;
+}
+
+#header_top_ad {
+	display: flex;
+	justify-content: center;
+}
+
+#header_top_ad div {
+	margin-left: 400px;
+}
+
+#header_logo {
+    width: 200px;
+    height: 100px;
+    margin-right: 300px;
+    margin-top: 15px;
+}
+
+#header_input {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header_cart, #header_login, #header_logout {
+    width: 50px;
+    height: 50px;
+}
+
+#login_welcome {
+	margin-right: 15px;
+}
+
+#header_search {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+#header_search_input {
+    width: 250px;
+    height: 50px;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+}
+
+#header_cart {
+    margin-right: 30px;
+}
+
+#header_list {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header_list div {
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: 24px;
+}
+
+#header_list div input {
+	background: white;
+}
+
+#header_admin_btn {
+    display: flex;
+    justify-content: center;
+    margin-left: 1300px;
+}
+
+#header_admin_btn input {
+    width: 150px;
+    font-size: 18px;
+    color: white;
+    background-color: tomato;
+    border-radius: 15px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.admin_header_logo {
+    padding-right: 500px;
+}
+
+#main_search_form {
+	display: flex;
+	align-items: center;
+}
+
+#header_search_btn {
+	height: 50px;
+	width: 100px;
+	margin-right: 50px;
+	font-size: 20px;
+	border-radius: 18px;
+}

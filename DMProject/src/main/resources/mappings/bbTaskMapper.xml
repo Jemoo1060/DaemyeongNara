@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IBbTaskDao">
+	
+	<resultMap type="bbaDto" id="rsMap1">
+		<result property="answerNum" column="ANSWER_NUM" />
+		<result property="bbiCode" column="BBI_CODE" />
+		<result property="bbNum" column="BB_NUM" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="answerDate" column="ANSWER_DATE" />
+		<result property="answerCn" column="ANSWER_CN" />
+	</resultMap>
+	
+	<resultMap type="bbDto" id="rsMap2">
+		<result property="bbiCode" column="BBI_CODE" />
+		<result property="bbNum" column="BB_NUM" />
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="bbTitl" column="BB_TITL" />
+		<result property="bbCn" column="BB_CN" />
+		<result property="bbRdcnt" column="BB_RDCNT" />
+		<result property="bbRegistDate" column="BB_REGIST_DATE" />
+		<result property="bbPwd" column="BB_PWD" />
+		<result property="bbOthbcAt" column="BB_OTHBC_AT"/>
+	</resultMap>
+	
+	<resultMap type="bbiDto" id="rsMap3">
+		<result property="bbiCode" column="BBI_CODE" />
+		<result property="bbNum" column="BB_NUM" />
+		<result property="bbImageCode" column="BB_IMAGE_CODE" />
+		<result property="bbImageUrl" column="BB_IMAGE_URL" />
+	</resultMap>
+	
+	<resultMap type="productDto" id="rsMap4">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+	</resultMap>
+	
+	<resultMap type="memberDto" id="rsMap6">
+		<result property="mbrCode" column="MBR_CODE" />
+		<result property="mbrId" column="MBR_ID" />
+		<result property="mbrPwd" column="MBR_PWD" />
+		<result property="mbrName" column="MBR_NAME" />
+		<result property="mbrBrthdy" column="MBR_BRTHDY" />
+		<result property="mbrSex" column="MBR_SEX" />
+		<result property="mbrEmail" column="MBR_EMAIL" />
+		<result property="mbrTelNo" column="MBR_TELNO" />
+		<result property="mbrGrade" column="MBR_GRADE" />
+		<result property="sbscrbDate" column="SBSCRB_DATE" />
+		<result property="schulGradeClass" column="SCHUL_GRADE_CLASS" />	
+	</resultMap>
+	
+	
+	<resultMap type="HashMap" id="rsMap">
+		<collection property="bb"  resultMap="rsMap2"></collection>
+		<collection property="bbi" resultMap="rsMap3"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap5">
+		<collection property="bb"  resultMap="rsMap2"></collection>
+		<collection property="product" resultMap="rsMap4"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap7">
+		<collection property="bba"  resultMap="rsMap1"></collection>
+		<collection property="member" resultMap="rsMap6"></collection>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap8">
+		<collection property="bb"  resultMap="rsMap2"></collection>
+		<collection property="member" resultMap="rsMap6"></collection>
+	</resultMap>
+	
+	<select id="bbSltmul" parameterType="HashMap" resultType="HashMap"  resultMap="rsMap8">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM   BULLETIN_BOARD BB
+     		 		JOIN   DMEMBER DM
+     		 		ON (BB.MBR_CODE = DM.MBR_CODE)
+     		 		WHERE BBI_CODE = #{bbiCode}
+     		 		ORDER BY TO_NUMBER(BB_NUM) DESC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="bbPaging" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM BULLETIN_BOARD
+		WHERE BBI_CODE = #{bbiCode}
+	</select>
+	
+	
+	<select id="bbTitleSltmul" parameterType="HashMap" resultType="HashMap"  resultMap="rsMap8">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+					FROM BULLETIN_BOARD BB
+					JOIN   DMEMBER DM
+     		 		ON (BB.MBR_CODE = DM.MBR_CODE)
+					WHERE BBI_CODE = #{bbiCode}
+					AND BB_TITL LIKE #{bbTitl}
+					ORDER BY TO_NUMBER(BB_NUM) DESC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="bbTitlePaging" parameterType="HashMap" resultType="int">
+		SELECT COUNT(*)
+		FROM BULLETIN_BOARD
+		WHERE BBI_CODE = #{bbiCode}
+		AND BB_TITL LIKE #{bbTitl}
+	</select>
+	
+	<select id="bbPrdSltmul" parameterType="HashMap" resultType="HashMap"  resultMap="rsMap8">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+					FROM BULLETIN_BOARD BB
+					JOIN   DMEMBER DM
+     		 		ON (BB.MBR_CODE = DM.MBR_CODE)
+					WHERE BBI_CODE = #{bbiCode}
+					AND PRD_CODE = #{prdCode}
+					ORDER BY TO_NUMBER(BB_NUM) DESC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="bbPrdPaging" parameterType="HashMap" resultType="int">
+		SELECT COUNT(*)
+		FROM BULLETIN_BOARD
+		WHERE BBI_CODE = #{bbiCode}
+		AND PRD_CODE = #{prdCode}
+	</select>
+	
+	<select id="bbInfoPrint" parameterType="bbDto" resultType="HashMap" resultMap= "rsMap">
+		SELECT * 
+		FROM BULLETIN_BOARD BB 
+		JOIN BULLETIN_BOARD_IMAGE BBI 
+		ON BB.BBI_CODE =  BBI.BBI_CODE
+		AND BB.BB_NUM = BBI.BB_NUM 
+		WHERE BB.BBI_CODE = #{bbiCode} 
+		AND BB.BB_NUM = #{bbNum}
+		AND BB_IMAGE_CODE = '01'
+	</select>
+	
+	<select id="bbaInfoPrint" parameterType="bbDto" resultType="HashMap" resultMap= "rsMap7">
+		SELECT * 
+		FROM BULLETIN_BOARD_ANSWER BBA 
+		JOIN DMEMBER MB
+		ON (BBA.MBR_CODE = MB.MBR_CODE)
+		WHERE BBI_CODE = #{bbiCode} 
+		AND BB_NUM = #{bbNum}
+		ORDER BY TO_NUMBER(ANSWER_NUM)
+	</select>
+	
+	<update id="bbRdcntUpdate" >	 
+		UPDATE BULLETIN_BOARD SET
+		BB_RDCNT = #{bbRdcnt}
+		WHERE BBI_CODE = #{bbiCode}
+		AND BB_NUM =  #{bbNum}
+	</update>
+	
+	<select id="prdNameSearch" parameterType="String" resultMap="rsMap5">
+		SELECT * 
+		FROM BULLETIN_BOARD BB JOIN PRODUCT P
+		ON BB.PRD_CODE = P.PRD_CODE
+		WHERE BBI_CODE = '2' AND PRD_NAME LIKE #{prdName}
+ 	</select>
+ 	
+ 	<select id="bbPwdCheck" parameterType="bbDto" resultType="String">
+		SELECT BB_PWD
+		FROM  BULLETIN_BOARD
+		WHERE BBI_CODE = #{bbiCode}
+		AND BB_NUM =  #{bbNum}
+	</select>
+	
+</mapper>
+
+

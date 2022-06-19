@@ -1,0 +1,90 @@
+#admin_prd_manage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+#admin_prd_manage h1 {
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+
+#ap_manage_category {
+    display: flex;
+    justify-content: flex-end;
+    width: 930px;
+}
+
+#ap_manage_category select {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#admin_prd_manage table {
+    border: 1px solid black;
+}
+
+#admin_prd_manage th {
+    border: 1px solid black;
+    font-size: 22px;
+    vertical-align: middle;
+    background-color: rgb(46,204,113);
+    color: white;
+}
+
+#admin_prd_manage td {
+    border: 1px solid black;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.apm_prd_num {
+    width: 100px;
+    height: 50px;
+}
+
+.apm_prd_name {
+    width: 500px;
+}
+
+.apm_prd_price {
+    width: 100px;
+}
+
+.apm_prd_stock {
+    width: 100px;
+}
+
+.apm_prd_anything {
+    width: 100px;
+}
+
+.apm_prd_num, .apm_prd_name, .apm_prd_anything {
+    text-align: center;
+}
+
+.apm_prd_price, .apm_prd_stock {
+    text-align: end;
+    padding-right: 15px;
+}
+
+.apm_prd_anything input {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid rgb(46,204,113);
+}
+
+.manage_search_form {
+	display: flex;
+}
+
+.manage_search_btn {
+	width: 80px;
+	height: 33px;
+	margin-left: 15px;
+}

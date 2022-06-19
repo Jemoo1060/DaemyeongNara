@@ -1,0 +1,75 @@
+
+@import url("reset.css"); 
+
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#body{
+  margin-bottom: 100px;
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #main{
+    position: relative;
+    height: inherit;
+    width:760px;
+    text-align: center;
+   
+  }
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+  
+  #carth1{
+    font-size: 35px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  #button1{
+    background-color: white;
+    color:rgb(46, 204, 113);
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : solid 3px;
+    border-color: rgb(46,204,113);
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    
+}
+
+#button2 {
+  background-color: rgb(46, 204, 113);
+  color:white;
+  font-weight: bolder;
+  font-size: 20px;
+  border-radius: 5px;
+  border : 0px;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+}
+
+

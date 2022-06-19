@@ -1,0 +1,124 @@
+@import url("reset.css"); 
+
+.content-box{
+  height: inherit;
+  width:960px;
+
+  margin:0 auto;
+}
+
+#body{
+}
+  
+  #body > .content-box {
+    display: flex;
+  }
+
+  #aside{
+    height: inherit;
+    width: 100px;
+
+  }
+
+  #main{
+    position: relative;
+    height: inherit;
+    width:760px;
+   
+  }
+
+  #aside2{
+    height: inherit;
+    width: 100px;
+
+  }
+  #carth1{
+    font-size: 35px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 320px;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  #choice_delete{
+    padding:3px 25px;
+    position: absolute;
+    right: 0%;
+  }
+
+.content {
+  font-size: 15px;
+}
+
+.order_table{
+  margin-bottom: 100px;
+  font-size: 18px;
+  width: 100%;
+  font-size: 18px;
+  
+}
+
+.order_table th{
+  border-top: gray solid 1px;
+  height: 45px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.order_table td {
+  border-top: gray solid 1px;
+    border-bottom: gray solid 1px;
+    height: 100px;
+    text-align: center;
+}
+
+.order_table input {
+  padding:5px;
+  border: 0px;
+}
+
+#charge_table {
+  margin-bottom: 50px;
+  font-size: 18px;
+  width: 100%;
+  font-size: 18px;
+}
+
+#charge_table th{
+    width: 55%;
+    text-align: center;
+    line-height: 2.0;
+}
+#charge_table td{
+  width: 45%;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#result {
+  color: rgb(241, 100, 100);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#button_box {
+	margin-bottom: 50px;
+}
+
+#button_box input{
+    background-color:rgb(241, 100, 100);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin:auto;
+    display: block;
+}
+
+

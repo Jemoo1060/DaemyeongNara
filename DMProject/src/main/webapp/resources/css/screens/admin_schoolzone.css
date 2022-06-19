@@ -1,0 +1,91 @@
+#admin_schoolzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+#admin_schoolzone h1 {
+    font-size: 45px;
+    padding-bottom: 50px;
+}
+
+.as_input_ready {
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(94,94,94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.as_fir_line, .as_sec_line {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.as_fir_line div, .as_sec_line div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding-top: 20px;
+    border-radius: 30px;
+}
+
+.as_fir_line input, .as_sec_line input {
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(94,94,94);
+    margin: 30px;
+}
+
+.as_fir_line div div, .as_sec_line div div {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.as_grade1 {
+    color: rgb(94,94,94);
+    background-color: rgb(222,158,250);
+}
+
+.as_grade2 {
+    color: rgb(94,94,94);
+    background-color: rgb(172,217,247);
+}
+
+.as_grade3 {
+    color: rgb(94,94,94);
+    background-color: rgb(244,226,155);
+}
+
+.as_grade4 {
+    color: rgb(94,94,94);
+    background-color: rgb(198,253,221);
+}
+
+.as_grade5 {
+    color: rgb(94,94,94);
+    background-color: rgb(171,250,235);
+}
+
+.as_grade6 {
+    color: rgb(94,94,94);
+    background-color: rgb(248,207,203);
+}
+
+.as_sec_line {
+    padding-bottom: 100px;
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dm.dao.IProductTaskDao">
+
+	<resultMap type="productDto" id="rsMap1">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="pclCode" column="PCL_CODE" />
+		<result property="prdName" column="PRD_NAME" />
+		<result property="prdPc" column="PRD_PC" />
+		<result property="prdInvntry" column="PRD_INVNTRY" />
+		<result property="prdCn" column="PRD_CN" />
+		<result property="prdRegistDate" column="PRD_REGIST_DATE" />
+		<result property="prdRecomendAt" column="PRD_RECOMEND_AT" />
+		<result property="prdRecomendCnt" column="PRD_RECOMEND_CNT" />
+		<result property="prdSe" column="PRD_SE" />
+	</resultMap>
+
+	<resultMap type="productImageDto" id="rsMap2">
+		<result property="prdCode" column="PRD_CODE" />
+		<result property="prdImageCode" column="PRD_IMAGE_CODE" />
+		<result property="prdImageUrl" column="PRD_IMAGE_URL" />
+	</resultMap>
+	
+	<resultMap type="HashMap" id="rsMap">
+		<collection property="product" resultMap="rsMap1"></collection>
+		<collection property="productImage" resultMap="rsMap2"></collection>
+	</resultMap>	
+
+	<select id="allPrdSltmul" parameterType="HashMap" resultMap="rsMap1">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM   PRODUCT
+     		 		ORDER BY TO_NUMBER(PRD_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="prdListPaging" resultType="int">
+		SELECT COUNT(*) FROM PRODUCT ORDER BY PRD_CODE
+	</select>
+	
+	<select id="pclListOutput" parameterType="HashMap" resultMap="rsMap1">
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM   PRODUCT
+     		 		WHERE PCL_CODE = #{pclCode}
+     		 		ORDER BY TO_NUMBER(PRD_CODE) ASC
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{startRow}
+     	AND ROWNUM <![CDATA[<=]]> #{maxRows}
+	</select>
+	
+	<select id="pclCodeListPaging" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM PRODUCT
+		WHERE PCL_CODE = #{pclCode}
+	</select>
+	
+	<select id="pclListCount" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM PRODUCT P JOIN PRODUCT_IMAGE PI
+		ON (P.PRD_CODE = PI.PRD_CODE)
+		WHERE PCL_CODE = #{pclCode} AND PI.PRD_IMAGE_CODE = '01'
+	</select>
+	
+	<select id="pclListPaging" parameterType="HashMap" resultType="HashMap" resultMap="rsMap"> 
+		SELECT *
+		FROM (SELECT ROWNUM RNUM
+		           , O.*
+      		  FROM (SELECT *
+     		 		FROM PRODUCT P JOIN PRODUCT_IMAGE PI
+     		 		ON (P.PRD_CODE = PI.PRD_CODE)
+     		 		WHERE PCL_CODE = #{pclCode} AND PI.PRD_IMAGE_CODE = '01'
+     		 	   ) O
+     		 )
+     	WHERE RNUM <![CDATA[>=]]> #{STARTROW}
+     	AND ROWNUM <![CDATA[<=]]> #{MAXROWS}
+     	
+	</select>
+	
+	<select id="prdInfoPrint" parameterType="String" resultType="HashMap" resultMap="rsMap">
+		SELECT * 
+		FROM PRODUCT P JOIN PRODUCT_IMAGE PI
+		ON (P.PRD_CODE = PI.PRD_CODE)
+		WHERE P.PRD_CODE = #{prdCode}
+	</select>
+	
+	<update id="likeCheck" parameterType="HashMap">  <!-- 좋아요구현 테이블이렇게?? 흠... -->
+	    UPDATE PRODUCT
+	    SET prdRecomendCnt = prdRecomendCnt + 1 
+	    WHERE mbrCode=#{mbrCode} AND prdCode =#{prdCode}
+    </update>
+  
+    <update id="likeCheckCancel" parameterType="HashMap">
+	    UPDATE PRODUCT
+	    SET prdRecomendCnt = 0
+	    WHERE mbrCode=#{mbrCode} AND prdCode =#{prdCode}
+    </update>
+	
+</mapper>

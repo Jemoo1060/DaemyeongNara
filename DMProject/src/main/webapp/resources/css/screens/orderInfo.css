@@ -1,0 +1,126 @@
+#orderInfomainfont{
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#orderDate{
+    display: flex;
+}
+
+.orderDateEl{
+    font-size: 18px;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+
+#orderDate h2{
+    padding-top: 10px;
+}
+
+.orderDateEl input[type="date"]{
+    height: 35px;
+    font-size: 18px;
+}
+
+.orderDateEl input[type="submit"]{
+    height: 35px;
+    width: 60px;
+    font-size: 18px;
+}
+#orderDate h3{
+    margin-top: 20px;
+}
+
+
+#orderTable{
+    width: 1000px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+#orderTable tr th{
+    background-color: rgb(46, 204, 113);
+    border:1px solid black;
+    color: white;
+    height: 70px;
+    vertical-align: middle;
+    font-weight: bolder;
+}
+
+#orderTable tr td{
+    border:1px solid black;
+    height: 70px;
+    vertical-align: middle;
+}
+
+.orderInfoTable{
+    display: flex;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.orderInfoTd1{
+    flex: 0 0 75%;
+}
+
+.orderInfoTd2{
+    flex: 0 0 25%;
+}
+
+.orderInfoTd2 a:visited, .orderState a:visited { color: #4b70fd; }
+
+.orderInfoTd2 a:link, .orderState a:link { text-decoration: underline; }
+
+
+.orderState{
+    margin-bottom: 5px;
+}
+
+#orderNotice{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#orderInfoButtonBox{
+    display: flex;
+    justify-content: center;
+}
+
+
+#orderInfoButtonBox #myPageButton{
+    background-color: white;
+    color: rgb(46, 204, 113);
+    border: 1px solid rgb(46, 204, 113);
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+
+#orderInfoButtonBox #homeButton{
+    background-color: rgb(46, 204, 113);
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    border : 0px;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+
+
+
+
